@@ -1,0 +1,30 @@
+# Node.js dependencies (backend)
+server/node_modules/
+server/.env
+server/dist/
+server/build/
+
+# Node.js dependencies (frontend)
+client/node_modules/
+client/.env
+client/dist/
+client/build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode files
+.vscode/
+
+# Optional: local editor files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
