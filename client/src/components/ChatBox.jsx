@@ -2,8 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 import InputArea from "./InputArea";
 import Loader from "./Loader";
-import { askAI, resetConversation } from "../services/api"; // fixed import path
-
+import { askAI, resetConversation } from "../Services/api";
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -59,7 +58,7 @@ const ChatBox = () => {
 
   return (
     <div className="chat-container">
-      {/* Quick-access buttons */}
+      {/* Quick-access floating buttons */}
       <div className="quick-buttons">
         <button onClick={() => handleQuickAsk("Tell me about Haylebest's skills")}>Skills</button>
         <button onClick={() => handleQuickAsk("Tell me about Haylebest's projects")}>Projects</button>
@@ -77,12 +76,7 @@ const ChatBox = () => {
       </div>
 
       {/* Input area */}
-      <InputArea
-        input={input}
-        setInput={setInput}
-        onSend={handleSend}
-        loading={loading}
-      />
+      <InputArea input={input} setInput={setInput} onSend={handleSend} loading={loading} />
 
       {/* Reset button */}
       <button className="reset-btn" onClick={handleReset}>
