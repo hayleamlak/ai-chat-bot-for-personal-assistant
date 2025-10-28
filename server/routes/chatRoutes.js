@@ -11,7 +11,9 @@ let conversationHistory = [];
 router.post("/ask", async (req, res) => {
   try {
     const userMessage = req.body.message;
-    if (!userMessage) return res.status(400).json({ error: "Message is required" });
+    if (!userMessage) {
+      return res.status(400).json({ error: "Message is required" });
+    }
 
     const systemPrompt = buildSystemPrompt();
 
@@ -22,11 +24,19 @@ router.post("/ask", async (req, res) => {
       { role: "user", content: userMessage }
     ];
 
+    console.log("Messages sent to OpenRouter:", messages);
+
     // Call OpenRouter API
     const completion = await callOpenRouter(messages);
 
+    console.log("OpenRouter response:", completion);
+
+    if (!completion.choices || completion.choices.length === 0) {
+      return res.status(500).json({ error: "No response from OpenRouter API" });
+    }
+
     // Extract AI reply (OpenRouter response format)
-    const aiReply = completion.choices[0].message.content;
+    const aiReply = completion.choices[0].message?.content || "No reply from AI";
 
     // Save conversation
     conversationHistory.push({ role: "user", content: userMessage });
@@ -34,8 +44,9 @@ router.post("/ask", async (req, res) => {
 
     res.json({ answer: aiReply });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Something went wrong" });
+    console.error("Error in /ask route:", error);
+    // Send the actual error message for debugging (optional in production)
+    res.status(500).json({ error: error.message || "Something went wrong" });
   }
 });
 
