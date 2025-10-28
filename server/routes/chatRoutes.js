@@ -1,10 +1,11 @@
+// routes/chatRoutes.js
 import express from "express";
-import openai from "../config/openaiConfig.js";
+import { callOpenRouter } from "../config/openrouterConfig.js"; // Use OpenRouter
 import { buildSystemPrompt } from "../utils/systemPrompt.js";
 
 const router = express.Router();
 
-// Store conversation per session (simple in-memory version)
+// Simple in-memory conversation storage
 let conversationHistory = [];
 
 router.post("/ask", async (req, res) => {
@@ -14,22 +15,20 @@ router.post("/ask", async (req, res) => {
 
     const systemPrompt = buildSystemPrompt();
 
-    // Build messages array for OpenAI
+    // Build messages array for OpenRouter
     const messages = [
       { role: "system", content: systemPrompt },
       ...conversationHistory,
       { role: "user", content: userMessage }
     ];
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: messages,
-      temperature: 0.7
-    });
+    // Call OpenRouter API
+    const completion = await callOpenRouter(messages);
 
+    // Extract AI reply (OpenRouter response format)
     const aiReply = completion.choices[0].message.content;
 
-    // Save conversation for follow-ups
+    // Save conversation
     conversationHistory.push({ role: "user", content: userMessage });
     conversationHistory.push({ role: "assistant", content: aiReply });
 
