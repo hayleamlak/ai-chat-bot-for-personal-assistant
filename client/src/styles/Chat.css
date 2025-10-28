@@ -1,108 +1,85 @@
-/* Global */
+/* Global Styles */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1a1a2e, #162447);
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  color: #f1f5f9;
 }
 
-/* Chat container floating */
+/* Chat Container */
 .chat-container {
   width: 100%;
-  max-width: 500px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  max-width: 600px;
+  height: 90vh;
+  background: #1e293b;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 20px;
-  animation: float 1.5s ease-in-out infinite alternate;
+  padding: 16px;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-8px); }
-}
-
-/* Messages area */
+/* Messages Area */
 .messages {
   flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-right: 5px;
+  gap: 12px;
+  padding-right: 8px;
+  scroll-behavior: smooth;
 }
 
-/* Message bubbles */
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+
+/* Message Bubbles */
 .message {
   max-width: 75%;
-  padding: 12px 18px;
-  border-radius: 20px;
+  padding: 12px 16px;
+  border-radius: 16px;
   animation: fadeIn 0.3s ease-in-out;
+  word-wrap: break-word;
 }
 
 .message.user {
   align-self: flex-end;
-  background: linear-gradient(135deg, #ff6ec7, #5af5ff);
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 0 15px #ff6ec7;
+  background: #4f46e5;
+  color: #fff;
 }
 
 .message.ai {
   align-self: flex-start;
-  background: linear-gradient(135deg, #6b73ff, #000dff);
-  color: white;
-  box-shadow: 0 0 12px #6b73ff;
+  background: #334155;
+  color: #fff;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Loader typing animation */
-.loader span {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin: 0 2px;
-  background: #ffffff;
-  border-radius: 50%;
-  animation: bounce 0.6s infinite alternate;
-}
-
-.loader span:nth-child(2) { animation-delay: 0.2s; }
-.loader span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes bounce {
-  to { transform: translateY(-8px) opacity(0.7); }
-}
-
-/* Input area */
+/* Input Area */
 .input-area {
   display: flex;
   gap: 10px;
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .input-area input {
   flex: 1;
-  padding: 12px 18px;
-  border-radius: 25px;
+  padding: 12px 16px;
+  border-radius: 20px;
   border: none;
+  background: #475569;
+  color: #fff;
   outline: none;
-  background: rgba(255,255,255,0.1);
-  color: white;
-  backdrop-filter: blur(10px);
 }
 
 .input-area input::placeholder {
@@ -112,24 +89,48 @@ body {
 .input-area button {
   padding: 12px 20px;
   border: none;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  border-radius: 20px;
+  background: #6366f1;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 15px #ff00ff, 0 0 20px #00ffff;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .input-area button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #ff00ff, 0 0 30px #00ffff;
+  box-shadow: 0 0 12px #6366f1;
 }
 
-/* Reset button */
+/* Quick Buttons */
+.quick-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.quick-buttons button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quick-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+/* Reset Button */
 .reset-btn {
   margin-top: 10px;
-  background: #ff4b5c;
+  background: #ef4444;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -138,46 +139,55 @@ body {
   font-weight: bold;
 }
 
-/* Quick floating buttons */
-.quick-buttons {
+/* Loader */
+.loader {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 4px;
+  align-self: flex-start;
+  padding: 0 16px;
 }
 
-.quick-buttons button {
-  background: linear-gradient(135deg, #ff6ec7, #5af5ff);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 18px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 0 10px #ff6ec7, 0 0 15px #5af5ff;
-  transition: transform 0.2s, box-shadow 0.2s;
+.loader span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
 }
 
-.quick-buttons button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 20px #ff6ec7, 0 0 25px #5af5ff;
+.loader span:nth-child(2) { animation-delay: 0.2s; }
+.loader span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  to { transform: translateY(-8px); opacity: 0.7; }
 }
 
-/* Scrollbar */
-.messages::-webkit-scrollbar {
-  width: 6px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.messages::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.3);
-  border-radius: 3px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chat-container {
+    height: 85vh;
+    width: 95%;
+    padding: 12px;
+  }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .chat-container { width: 90%; height: 80vh; }
-  .quick-buttons button { padding: 6px 12px; font-size: 0.8rem; }
-  .input-area input { padding: 10px 14px; font-size: 0.9rem; }
-  .input-area button { padding: 10px 16px; font-size: 0.9rem; }
+  .input-area input {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .input-area button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  .quick-buttons button {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
 }
