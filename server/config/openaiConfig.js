@@ -1,12 +1,22 @@
-// config/openaiConfig.js
-import OpenAI from "openai";
+// config/openrouterConfig.js
+import fetch from "node-fetch";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1", // ✅ Use OpenRouter endpoint
-});
+export const callOpenRouter = async (messages) => {
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: messages,
+    }),
+  });
 
-export default openai;
+  const data = await response.json();
+  return data;
+};
