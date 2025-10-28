@@ -3,6 +3,7 @@ import ChatMessage from "./ChatMessage";
 import InputArea from "./InputArea";
 import Loader from "./Loader";
 import { askAI, resetConversation } from "../Services/api";
+
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -32,13 +33,8 @@ const ChatBox = () => {
   };
 
   const handleReset = async () => {
-    try {
-      await resetConversation();
-    } catch (err) {
-      console.error("Reset failed:", err);
-    } finally {
-      setMessages([]);
-    }
+    await resetConversation();
+    setMessages([]);
   };
 
   const handleQuickAsk = async (prompt) => {
@@ -58,7 +54,6 @@ const ChatBox = () => {
 
   return (
     <div className="chat-container">
-      {/* Quick-access floating buttons */}
       <div className="quick-buttons">
         <button onClick={() => handleQuickAsk("Tell me about Haylebest's skills")}>Skills</button>
         <button onClick={() => handleQuickAsk("Tell me about Haylebest's projects")}>Projects</button>
@@ -66,7 +61,6 @@ const ChatBox = () => {
         <button onClick={() => handleQuickAsk("Describe Haylebest's personality")}>Personality</button>
       </div>
 
-      {/* Chat messages */}
       <div className="messages">
         {messages.map((msg, i) => (
           <ChatMessage key={i} sender={msg.sender} text={msg.text} />
@@ -75,10 +69,8 @@ const ChatBox = () => {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input area */}
       <InputArea input={input} setInput={setInput} onSend={handleSend} loading={loading} />
 
-      {/* Reset button */}
       <button className="reset-btn" onClick={handleReset}>
         Reset Conversation
       </button>
