@@ -7,13 +7,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   color: #f1f5f9;
 }
 
 /* Chat Container */
 .chat-container {
-  width: 100%;
+  width: 90%;
   max-width: 600px;
   height: 90vh;
   background: #1e293b;
@@ -41,7 +41,7 @@ body {
 }
 .messages::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.2);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 /* Message Bubbles */

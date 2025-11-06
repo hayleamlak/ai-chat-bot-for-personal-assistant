@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 import InputArea from "./InputArea";
 import Loader from "./Loader";
-import { askAI, resetConversation } from "../Services/api";
+import { askAI, resetConversation } from "../services/api";
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
