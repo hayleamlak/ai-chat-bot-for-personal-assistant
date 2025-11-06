@@ -1,10 +1,11 @@
+// services/api.js
 import axios from "axios";
 
 // Live backend URL
-const API_URL = "https://ai-chat-bot-for-personal-assistant.onrender.com/api/chat/ask";
+const API_URL = "https://ai-chat-bot-for-personal-assistant-1.onrender.com/api/chat/ask";
 
 // Optional reset endpoint if your backend supports it
-const RESET_URL = "https://ai-chat-bot-for-personal-assistant.onrender.com/api/chat/reset";
+const RESET_URL = "https://ai-chat-bot-for-personal-assistant-1.onrender.com/api/chat/reset";
 
 export const askAI = async (message) => {
   const res = await axios.post(API_URL, { message });
