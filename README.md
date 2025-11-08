@@ -6,23 +6,7 @@ Table of Contents
 
 Features
 
-Project Structure
 
-Tech Stack
-
-Installation
-
-Usage
-
-Customization
-
-Screenshots
-
-Contributing
-
-License
-
-Features
 
 AI chatbot tailored to the developer’s skills, projects, and personality
 
