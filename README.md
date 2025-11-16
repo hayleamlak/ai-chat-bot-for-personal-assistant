@@ -6,23 +6,7 @@ Table of Contents
 
 Features
 
-Project Structure
 
-Tech Stack
-
-Installation
-
-Usage
-
-Customization
-
-Screenshots
-
-Contributing
-
-License
-
-Features
 
 AI chatbot tailored to the developer’s skills, projects, and personality
 
@@ -44,23 +28,6 @@ Project Structure
 ai-assistant/
 ├─ client/             # React frontend
 │  ├─ src/
-│  │  ├─ components/
-│  │  │  ├─ ChatBox.jsx
-│  │  │  ├─ ChatMessage.jsx
-│  │  │  ├─ InputArea.jsx
-│  │  │  └─ Loader.jsx
-│  │  ├─ services/
-│  │  │  └─ api.js
-│  │  └─ style/
-│  │     └─ chat.css
-│  └─ package.json
-├─ server/             # Node.js backend
-│  ├─ routes/
-│  │  └─ chatRoutes.js
-│  ├─ server.js
-│  └─ package.json
-├─ .gitignore
-└─ README.md
 
 Tech Stack
 
