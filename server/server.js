@@ -27,8 +27,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// Ensure preflight requests are handled
-app.options("*", cors(corsOptions));
+// Note: the `cors` middleware above will handle preflight (OPTIONS) requests.
+// Avoid using `app.options('*', ...)` because certain router/path-to-regexp
+// versions treat `*` as an invalid parameter and crash the server.
 app.use(express.json());
 
 // Routes
