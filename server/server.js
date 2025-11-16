@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 // Configure CORS with environment-driven allowed origins. Defaults include
 // localhost for dev and your Vercel frontend origin so deployed frontend can call the API.
-const defaultOrigins = "http://localhost:5173,https://ai-chat-bot-for-personal-assistant.vercel.app";
+const defaultOrigins = "http://localhost:5173,https://ai-chat-bot-for-personal-assistant.vercel.app,https://hayleamlakportifolio.vercel.app";
 const allowedOrigins = (process.env.CORS_ORIGINS || defaultOrigins).split(",").map(s => s.trim());
 
 // Optional debug logging for CORS (set DEBUG_CORS=true in Render env to enable)
