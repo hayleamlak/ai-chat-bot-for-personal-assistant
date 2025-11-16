@@ -1,20 +1,32 @@
+import { useRef } from "react";
+import { FiSend } from "react-icons/fi";
+
 const InputArea = ({ input, setInput, onSend, loading }) => {
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") onSend();
+  const textareaRef = useRef(null);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      onSend();
+    }
   };
 
   return (
     <div className="input-area">
-      <input
-        type="text"
+      <textarea
+        ref={textareaRef}
+        rows={1}
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={handleKeyPress}
-        placeholder="Ask me about skills, projects, hobbies..."
+        onKeyDown={handleKeyDown}
+        placeholder="Ask anything…"
+        aria-label="Message input"
       />
-      <button onClick={onSend} disabled={loading}>
-        {loading ? "..." : "Send"}
-      </button>
+      <div className="send-row">
+        <button className="send-btn" onClick={onSend} disabled={loading} aria-label="Send message">
+          {loading ? <span className="sending">...</span> : <><FiSend size={14} style={{verticalAlign:'middle', marginRight:8}}/>Send</>}
+        </button>
+      </div>
     </div>
   );
 };

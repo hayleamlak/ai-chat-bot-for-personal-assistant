@@ -11,11 +11,29 @@ const ChatMessage = ({ sender, text }) => {
       setDisplayedText((prev) => prev + text.charAt(index));
       index++;
       if (index >= text.length) clearInterval(interval);
-    }, 20); // typing speed (ms)
+    }, 18);
     return () => clearInterval(interval);
   }, [text, sender]);
 
-  return <div className={`message ${sender}`}>{displayedText}</div>;
+  const initials = sender === "user" ? "U" : "AI";
+
+  return (
+    <div className={`message-wrapper ${sender}`}>
+      {sender !== "user" && (
+        <div className="avatar" aria-hidden>
+          {initials}
+        </div>
+      )}
+      <div className={`message ${sender}`} role="article" aria-label={`${sender} message`}>
+        {displayedText}
+      </div>
+      {sender === "user" && (
+        <div className="avatar" aria-hidden>
+          {initials}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default ChatMessage;

@@ -21,7 +21,7 @@ Approach & Work Style:
 ${profile.approach.join("\n")}
 
 Hobbies:
-${profile.hobbies.join(", ")}
+${profile.hobbies.join(",")}
 
 Personality Traits:
 ${profile.personality.join(", ")}
