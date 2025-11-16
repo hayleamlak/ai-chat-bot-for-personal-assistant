@@ -9,27 +9,52 @@ dotenv.config();
 const app = express();
 
 // Middleware
-// Configure CORS with environment-driven allowed origins. Defaults to localhost Vite dev server.
-const allowedOrigins = (process.env.CORS_ORIGINS || "http://localhost:5173").split(",").map(s => s.trim());
+// Configure CORS with environment-driven allowed origins. Defaults include
+// localhost for dev and your Vercel frontend origin so deployed frontend can call the API.
+const defaultOrigins = "http://localhost:5173,https://ai-chat-bot-for-personal-assistant.vercel.app";
+const allowedOrigins = (process.env.CORS_ORIGINS || defaultOrigins).split(",").map(s => s.trim());
+
+// Optional debug logging for CORS (set DEBUG_CORS=true in Render env to enable)
+app.use((req, res, next) => {
+  if (process.env.DEBUG_CORS === "true") {
+    console.log("CORS DEBUG - incoming Origin:", req.headers.origin);
+    console.log("CORS DEBUG - allowedOrigins:", allowedOrigins);
+  }
+  next();
+});
+
 const corsOptions = {
   origin: function(origin, callback) {
     // Allow requests with no origin (e.g., curl, server-to-server)
     if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf("*") !== -1 || allowedOrigins.indexOf(origin) !== -1) {
-      return callback(null, true);
-    }
+    // allow wildcard '*' if present in env
+    if (allowedOrigins.indexOf("*") !== -1) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) return callback(null, true);
     return callback(new Error("CORS policy: This origin is not allowed."));
   },
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  // Limit allowed methods to those your client needs
+  methods: "GET,POST,OPTIONS",
+  // Allow Content-Type and Authorization headers from clients
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
   optionsSuccessStatus: 204
 };
 
 app.use(cors(corsOptions));
-// Note: the `cors` middleware above will handle preflight (OPTIONS) requests.
-// Avoid using `app.options('*', ...)` because certain router/path-to-regexp
-// versions treat `*` as an invalid parameter and crash the server.
+// Safety-net: ensure OPTIONS responses include the required preflight headers
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
+    const origin = req.headers.origin;
+    if (origin && (allowedOrigins.indexOf("*") !== -1 || allowedOrigins.indexOf(origin) !== -1)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+    }
+    // do not end the request here; let cors middleware and route handlers proceed
+  }
+  next();
+});
+
 app.use(express.json());
 
 // Routes
