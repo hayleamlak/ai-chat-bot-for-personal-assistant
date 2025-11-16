@@ -9,7 +9,26 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+// Configure CORS with environment-driven allowed origins. Defaults to localhost Vite dev server.
+const allowedOrigins = (process.env.CORS_ORIGINS || "http://localhost:5173").split(",").map(s => s.trim());
+const corsOptions = {
+  origin: function(origin, callback) {
+    // Allow requests with no origin (e.g., curl, server-to-server)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf("*") !== -1 || allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    }
+    return callback(new Error("CORS policy: This origin is not allowed."));
+  },
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+// Ensure preflight requests are handled
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 // Routes

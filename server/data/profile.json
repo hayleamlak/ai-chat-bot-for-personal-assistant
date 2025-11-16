@@ -1,42 +1,69 @@
 {
   "name": "Hayleamlak Tesfaye",
-  "role": "Full-Stack Web Developer & 3D Interactive Web Designer",
+  "displayName": "Hayleamlake",
+  "title": "MERN Stack Developer / Full-stack Developer & Web Creator",
   "location": "Ethiopia",
+  "email": "hayleamlaktesfaye12@gmail.com",
+  "shortBio": "Hi, I'm Hayleamlake — a passionate MERN stack developer and Computer Science student from Ethiopia. I build smart, scalable, and user-centered web solutions.",
+  "social": {
+    "github": "https://github.com/hayleamlak",
+    "linkedin": "https://www.linkedin.com/in/hayleamlak-tesfaye-801186340/",
+    "twitter": "https://twitter.com"
+  },
   "interests": ["AI", "automation", "3D web experiences", "game-like web interfaces"],
   "skills": {
-    "Web Development": ["HTML", "CSS", "JavaScript (ES6+)", "React", "React Three.js (@react-three/fiber, Drei)", "Vite", "Node.js", "Express", "MongoDB", "Supabase (PostgreSQL)", "Responsive design", "UI/UX optimization"],
-    "3D Web & Game Development": ["Interactive 3D portfolios and web games", "Animated buttons and floating objects", "Camera controls", "3D car racing games", "3D city navigation for portfolio experiences"],
-    "AI & Automation": ["Hybrid AI chatbots (AI + rule-based)", "Personalized AI assistants using Python", "Automation workflows using n8n"],
-    "Python & Bot Development": ["Telegram bot development", "Backend automation and data handling"]
+    "HTML": "95%",
+    "CSS": "90%",
+    "JavaScript": "92%",
+    "React": "88%",
+    "Node.js": "85%",
+    "Express": "83%",
+    "MongoDB": "80%",
+    "Tailwind CSS": "90%",
+    "Responsive Design": "95%",
+    "UI/UX": "85%",
+    "Animation": "82%"
   },
+  "tools": ["Git", "GitHub", "VS Code", "Postman", "npm", "MongoDB Atlas", "Vercel", "Netlify"],
+  "strengths": ["REST APIs", "JWT Authentication", "Debugging", "Team Collaboration", "Clean Code"],
   "projects": [
     {
-      "name": "ExitPrep Ethiopia",
-      "description": "Platform for Ethiopian university students to prepare for exit exams",
-      "features": ["Past exam papers", "Mock tests", "Progress tracking", "Forums"]
+      "name": "Hahu Online Fashion",
+      "description": "Full-stack fashion e-commerce platform with user accounts, product management, payment integration, and responsive design.",
+      "tags": ["Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
+      "github": "https://github.com/hayleamlak/hahu-online-fashion",
+      "live": "https://hahu-online-fashion.vercel.app/"
     },
     {
-      "name": "3D Portfolio Websites",
-      "description": "Interactive 3D portfolio with city exploration and floating objects",
-      "features": ["Typing animations", "Cursor-tracked highlights", "Interactive buttons", "Floating clouds and planes/boats", "Immersive navigation"]
+      "name": "Full-Stack E-Commerce Platform",
+      "description": "Full-stack e-commerce platform with product catalog, user authentication, shopping cart, and secure checkout.",
+      "tags": ["React", "Node.js", "Express", "MongoDB"],
+      "github": "https://github.com",
+      "live": "https://example.com"
     },
     {
-      "name": "E-Commerce App",
-      "description": "React frontend with Node.js + Express + MongoDB backend",
-      "features": ["Product management", "User interactions"]
+      "name": "Analytics Dashboard",
+      "description": "Real-time analytics dashboard with dynamic charts and interactive insights.",
+      "tags": ["React", "Charts", "three.js"],
+      "github": "https://github.com/hayleamlak/analytics-dasboard.git",
+      "live": "https://analytics-dasboard-mauve.vercel.app/"
     },
     {
-      "name": "AI Chatbots",
-      "description": "Telegram AI assistant with hybrid intelligence",
-      "features": ["Personalized responses", "Context-based answers"]
+      "name": "Personal AI Assistant",
+      "description": "Browser-based AI assistant combining AI APIs with custom logic for automation and interactive commands.",
+      "tags": ["React", "Node.js", "AI APIs", "Automation"],
+      "github": "https://github.com/hayleamlak/ai-chat-bot-for-personal-assistant.git",
+      "live": "https://ai-chat-bot-for-personal-assistant.vercel.app/"
     },
     {
-      "name": "Hackathon Project",
-      "description": "Modular, plug-and-play blog system for Next.js frontends",
-      "features": ["Production-ready with Supabase", "Fully automated workflow", "Clear documentation"]
+      "name": "3D Portfolio Website - Zemenay Hackathon",
+      "description": "3D immersive website showcasing interactive UI/UX elements and engaging animations.",
+      "tags": ["React", "three.js", "gsap"],
+      "github": "https://github.com/hayleamlak/zemenay-tech",
+      "live": "https://zemenay-tech-o2g2.vercel.app/"
     }
   ],
   "approach": ["Hands-on, project-based learning", "Step-by-step, beginner-friendly implementation", "Detail-oriented with UI/UX focus", "Creative problem-solving using 3D, AI, and automation"],
-  "hobbies": ["3D web experiences", "AI assistant development", "Automation of repetitive tasks", "Game-like web interactions", "Innovative web design techniques"],
-  "personality": ["Curious, tech-focused, highly experimental", "Analytical and detail-conscious", "Enjoys learning by doing", "Open to advanced concepts like AI integration, 3D modeling, interactive design"]
+  "hobbies": ["3D web experiences", "AI assistant development", "Automation of repetitive tasks", "Game-like web interactions"],
+  "personality": ["Curious", "Analytical", "Detail-conscious", "Enjoys learning by doing"]
 }
