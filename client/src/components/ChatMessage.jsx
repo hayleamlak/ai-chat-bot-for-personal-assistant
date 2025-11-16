@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
 
 const ChatMessage = ({ sender, text }) => {
   const [displayedText, setDisplayedText] = useState(sender === "ai" ? "" : text);
@@ -25,7 +29,18 @@ const ChatMessage = ({ sender, text }) => {
         </div>
       )}
       <div className={`message ${sender}`} role="article" aria-label={`${sender} message`}>
-        {displayedText}
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw, rehypeSanitize]}
+          components={{
+            // Ensure links open in a new tab and are safe
+            a: ({ node, ...props }) => (
+              <a {...props} target="_blank" rel="noopener noreferrer" />
+            )
+          }}
+        >
+          {displayedText}
+        </ReactMarkdown>
       </div>
       {sender === "user" && (
         <div className="avatar" aria-hidden>
