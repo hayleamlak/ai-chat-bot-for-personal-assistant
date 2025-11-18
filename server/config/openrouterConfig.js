@@ -6,16 +6,20 @@ dotenv.config();
 
 export const callOpenRouter = async (messages) => {
   try {
+    const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS) || 1024;
+    console.log("OpenRouter using max_tokens:", maxTokens);
+
     const resp = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
       },
+
       body: JSON.stringify({
         model: "microsoft/wizardlm-2-8x22b",
         messages: messages,
-        max_tokens: 2048,
+        max_tokens: maxTokens,
       }),
       // optional: set a timeout via AbortController if you want
     });
