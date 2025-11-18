@@ -6,8 +6,7 @@ dotenv.config();
 
 export const callOpenRouter = async (messages) => {
   try {
-    // Use smaller free-friendly model if none specified
-    const model = process.env.OPENROUTER_MODEL || "mistral-7b";
+    const model = process.env.OPENROUTER_MODEL || "openrouter/auto";
     const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS) || 512;
 
     console.log(`OpenRouter using model: ${model}, max_tokens: ${maxTokens}`);
