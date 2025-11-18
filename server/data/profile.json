@@ -1,69 +1,43 @@
 {
   "name": "Hayleamlak Tesfaye",
   "displayName": "Hayleamlake",
-  "title": "MERN Stack Developer / Full-stack Developer & Web Creator",
+  "title": "MERN Stack Developer",
   "location": "Ethiopia",
   "email": "hayleamlaktesfaye12@gmail.com",
-  "shortBio": "Hi, I'm Hayleamlake — a passionate MERN stack developer and Computer Science student from Ethiopia. I build smart, scalable, and user-centered web solutions.",
+  "shortBio": "Passionate MERN stack developer building user-centered web solutions.",
   "social": {
     "github": "https://github.com/hayleamlak",
-    "linkedin": "https://www.linkedin.com/in/hayleamlak-tesfaye-801186340/",
-    "twitter": "https://twitter.com"
+    "linkedin": "https://www.linkedin.com/in/hayleamlak-tesfaye-801186340/"
   },
-  "interests": ["AI", "automation", "3D web experiences", "game-like web interfaces"],
   "skills": {
     "HTML": "95%",
     "CSS": "90%",
     "JavaScript": "92%",
     "React": "88%",
     "Node.js": "85%",
-    "Express": "83%",
-    "MongoDB": "80%",
-    "Tailwind CSS": "90%",
-    "Responsive Design": "95%",
-    "UI/UX": "85%",
-    "Animation": "82%"
+    "MongoDB": "80%"
   },
-  "tools": ["Git", "GitHub", "VS Code", "Postman", "npm", "MongoDB Atlas", "Vercel", "Netlify"],
-  "strengths": ["REST APIs", "JWT Authentication", "Debugging", "Team Collaboration", "Clean Code"],
   "projects": [
     {
       "name": "Hahu Online Fashion",
-      "description": "Full-stack fashion e-commerce platform with user accounts, product management, payment integration, and responsive design.",
-      "tags": ["Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
+      "description": "E-commerce platform with user accounts and payment.",
       "github": "https://github.com/hayleamlak/hahu-online-fashion",
       "live": "https://hahu-online-fashion.vercel.app/"
     },
     {
-      "name": "Full-Stack E-Commerce Platform",
-      "description": "Full-stack e-commerce platform with product catalog, user authentication, shopping cart, and secure checkout.",
-      "tags": ["React", "Node.js", "Express", "MongoDB"],
-      "github": "https://github.com",
-      "live": "https://example.com"
-    },
-    {
       "name": "Analytics Dashboard",
-      "description": "Real-time analytics dashboard with dynamic charts and interactive insights.",
-      "tags": ["React", "Charts", "three.js"],
+      "description": "Real-time dashboard with charts.",
       "github": "https://github.com/hayleamlak/analytics-dasboard.git",
       "live": "https://analytics-dasboard-mauve.vercel.app/"
     },
     {
       "name": "Personal AI Assistant",
-      "description": "Browser-based AI assistant combining AI APIs with custom logic for automation and interactive commands.",
-      "tags": ["React", "Node.js", "AI APIs", "Automation"],
+      "description": "AI assistant with automation.",
       "github": "https://github.com/hayleamlak/ai-chat-bot-for-personal-assistant.git",
       "live": "https://ai-chat-bot-for-personal-assistant.vercel.app/"
-    },
-    {
-      "name": "3D Portfolio Website - Zemenay Hackathon",
-      "description": "3D immersive website showcasing interactive UI/UX elements and engaging animations.",
-      "tags": ["React", "three.js", "gsap"],
-      "github": "https://github.com/hayleamlak/zemenay-tech",
-      "live": "https://zemenay-tech-o2g2.vercel.app/"
     }
   ],
-  "approach": ["Hands-on, project-based learning", "Step-by-step, beginner-friendly implementation", "Detail-oriented with UI/UX focus", "Creative problem-solving using 3D, AI, and automation"],
-  "hobbies": ["3D web experiences", "AI assistant development", "Automation of repetitive tasks", "Game-like web interactions"],
-  "personality": ["Curious", "Analytical", "Detail-conscious", "Enjoys learning by doing"]
+  "approach": ["Project-based learning", "UI/UX focus", "Creative problem-solving"],
+  "hobbies": ["3D web", "AI development", "Automation"],
+  "personality": ["Curious", "Analytical", "Detail-conscious"]
 }
