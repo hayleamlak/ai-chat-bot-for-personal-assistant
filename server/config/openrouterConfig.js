@@ -12,8 +12,9 @@ export const callOpenRouter = async (messages) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "gpt-3.5-turbo",
+      model: "microsoft/wizardlm-2-8x22b", // Free model on OpenRouter
       messages: messages,
+      max_tokens: 2048,
     }),
   });
 
