@@ -22,13 +22,6 @@ Reset conversation functionality
 
 Separate frontend and backend for modularity
 
-Easy deployment and GitHub integration
-
-Project Structure
-ai-assistant/
-├─ client/             # React frontend
-│  ├─ src/
-
 Tech Stack
 
 Frontend: React, CSS, JavaScript, Glassmorphism & gradient design
