@@ -40,8 +40,7 @@ const ChatBox = () => {
       const answer = await askAI(input);
       setMessages([...newMessages, { sender: "ai", text: answer }]);
     } catch (err) {
-      setMessages([...newMessages, { sender: "ai", text: "⚠️ AI service is temporarily offline due to insufficient credits. Please check back later!
-." }]);
+      setMessages([...newMessages, { sender: "ai", text: "⚠️ AI service is temporarily offline due to insufficient credits." }]);
     } finally {
       setLoading(false);
     }
