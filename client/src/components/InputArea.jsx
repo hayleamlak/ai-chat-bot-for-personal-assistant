@@ -5,6 +5,7 @@ const InputArea = ({ input, setInput, onSend, loading }) => {
   const textareaRef = useRef(null);
 
   const handleKeyDown = (e) => {
+    if (loading) return;
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       onSend();
@@ -23,7 +24,14 @@ const InputArea = ({ input, setInput, onSend, loading }) => {
         aria-label="Message input"
       />
       <div className="send-row">
-        <button className="send-btn" onClick={onSend} disabled={loading} aria-label="Send message">
+        <button
+          className="send-btn"
+          onClick={() => {
+            if (!loading) onSend();
+          }}
+          disabled={loading}
+          aria-label="Send message"
+        >
           {loading ? <span className="sending">...</span> : <><FiSend size={14} style={{verticalAlign:'middle', marginRight:8}}/>Send</>}
         </button>
       </div>

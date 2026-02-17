@@ -29,7 +29,7 @@ const ChatBox = () => {
   }, [messages]);
 
   const handleSend = async () => {
-    if (!input.trim()) return;
+    if (loading || !input.trim()) return;
 
     const newMessages = [...messages, { sender: "user", text: input }];
     setMessages(newMessages);

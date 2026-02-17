@@ -6,7 +6,7 @@ dotenv.config();
 
 export const callOpenRouter = async (messages) => {
   try {
-    const model = process.env.OPENROUTER_MODEL || "openrouter/auto";
+    const model = process.env.OPENROUTER_MODEL || "deepseek/deepseek-r1-0528:free";
     const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS) || 512;
 
     console.log(`OpenRouter using model: ${model}, max_tokens: ${maxTokens}`);
