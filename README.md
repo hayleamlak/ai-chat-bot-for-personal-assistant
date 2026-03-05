@@ -3,7 +3,6 @@ AI Personal Assistant Web App
 A modern AI-powered personal assistant web application built with MERN stack, featuring a customized AI chatbot that knows about the developer's skills, projects, and interests. The frontend is interactive, futuristic, and responsive, while the backend integrates OpenRouter API for AI responses.
 
 Table of Contents
-
 Features
 
 AI chatbot tailored to the developer’s skills, projects, and personality
