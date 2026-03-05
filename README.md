@@ -50,7 +50,6 @@ Install client dependencies:
 cd ../client
 npm install
 
-
 Create a .env file in the server folder:
 
 PORT=5000
