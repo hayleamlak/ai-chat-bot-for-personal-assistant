@@ -65,7 +65,6 @@ Start the frontend:
 cd ../client
 npm run dev
 
-
 Open your browser at http://localhost:5173 (Vite default) and chat with your AI assistant.
 
 Customization
