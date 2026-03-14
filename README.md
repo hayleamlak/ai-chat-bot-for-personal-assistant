@@ -36,7 +36,6 @@ Clone the repository:
 git clone https://github.com/your-username/ai-assistant.git
 cd ai-assistant
 
-
 Install server dependencies:
 
 cd server
