@@ -4,7 +4,6 @@ A modern AI-powered personal assistant web application built with MERN stack, fe
 
 Table of Contents
 Features
-
 AI chatbot tailored to the developer’s skills, projects, and personality
 
 Typing animation for AI responses
