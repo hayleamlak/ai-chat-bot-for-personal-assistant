@@ -8,7 +8,6 @@ Features
 AI chatbot tailored to the developer’s skills, projects, and personality
 
 Typing animation for AI responses
-
 Quick-access buttons for common queries
 
 Floating, glassmorphism chat interface with gradient chat bubbles
