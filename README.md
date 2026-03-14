@@ -50,8 +50,6 @@ Create a .env file in the server folder:
 
 PORT=5000
 OPENROUTER_API_KEY=your_openrouter_api_key_here
-
-
 ⚠️ Never commit .env to GitHub.
 
 Usage
