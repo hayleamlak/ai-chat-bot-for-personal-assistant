@@ -5,6 +5,7 @@ Table of Contents
 Features
 AI chatbot tailored to the developer’s skills, projects, and personality
 
+
 Typing animation for AI responses
 Quick-access buttons for common queries
 
