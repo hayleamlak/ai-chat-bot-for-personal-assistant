@@ -76,7 +76,6 @@ Add buttons: Add new quick-access buttons in ChatBox.jsx and style them in chat.
 
 Screenshots
 
-
 Contributing
 
 Contributions are welcome!
